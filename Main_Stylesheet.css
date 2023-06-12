@@ -1,0 +1,864 @@
+:root{
+	--background-image: url(media/background/wall_1.jpg);
+	/*--music-themes-background-image: linear-gradient(
+		90deg,
+		#833ab4,
+		#fd1d1d,
+		#fcb045
+	);*/
+}
+
+body{
+	background-image: var(--background-image);
+	margin: 0px;
+	color: white;
+	font-family: "Segoe UI", Arial, sans-serif;
+	/*cursor: url(media/cursor.png),auto;*/
+}
+
+h1,h2,h3,h4,h5,h6,p {
+	margin: 0px;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+/* Top-Navigation-Bar */
+.navigation-bar{
+	height: auto;
+	width: auto;
+	background-image: linear-gradient(180deg, black, rgba(0, 0, 0, 0));
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	box-sizing: border-box;
+	padding-left: 5%;
+	padding-right: 5%;
+	transition: all ease-in-out 1s;
+}
+
+.navigation-bar > div {
+	display: inline-block;
+}
+
+.website-logo img{
+	height: 50px;
+	width: 50px;
+	animation-name: rotate;
+	animation-timing-function: ease-in-out;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	margin-top: 5px;
+}
+   /* Animation for website logo */
+@keyframes rotate{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+
+.website-name h4 {
+	color: rgb(80, 220, 255);
+} 
+
+.title-combo > div {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.fav {
+	animation-name: flexible;
+	animation-timing-function: ease-in-out;
+	animation-duration: 2s;
+	perspective: 10000px;
+	transform-style: preserve-3d;
+	animation-iteration-count: infinite;
+}
+    /* Animation for Favourites */
+@keyframes flexible{
+	75% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scaleX(1);
+	}
+}
+
+.search-bar {
+	width: 20%;
+	position: relative;
+}
+
+.search-bar input {
+	width: 100%;
+	font-size: 16px;
+	text-decoration: none;
+	border-radius: 10px;
+	border: none;
+	padding: 5px;
+	font-weight: 500;
+	text-align: center;
+	transition: all ease-in-out 0.1s;
+}
+    /* search icon */
+.fa-magnifying-glass {
+	color: #461e27;
+}
+
+.search-bar > div:nth-child(1) {
+	display: inline-block;
+	position: absolute;
+	width: min-content;
+	left: 5%;
+	top: 10%;
+	transition: all ease-in-out 0.1s;
+}
+
+    /* mic icon */
+.fa-microphone {
+	color: #461e27;
+}
+
+.search-bar > div:nth-child(3) {
+	display: inline-block;
+	position: absolute;
+	width: min-content;
+	right: 0%;
+	top: 10%;
+	transition: all ease-in-out 0.1s;
+}
+
+/* When the user clicks on the search bar there should be no outlining */
+input:focus{
+	outline: none;
+}
+
+/* Notification Bell */
+.notification-bell i {
+	width: 40px;
+	height: 30px;
+	animation-name: ringing;
+	animation-duration: 0.4s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-delay: 10s;
+	position: first;
+}
+    /* Animation for notification bell */
+@keyframes ringing {
+	0% {
+		transform: rotate(-15deg);
+	}
+	50% {
+		transform: rotate(15deg);
+	}
+	100% {
+		transform: rotate(-15deg);
+	}
+}  
+
+.profile-picture img {
+	height: 45px;
+	width: 45px;
+	border-radius: 100%;
+	margin-top: 5px;
+}  
+
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+
+/* Main */
+main {
+	width: 100%;
+	padding: 0% 3%;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	/*justify-content: space-around;*/
+	transition: all ease-in-out 1s;
+}
+/* There are two aside section and both of them have the class "Aside" */
+
+.aside {
+	display: inline-block;
+	overflow: hidden;
+}
+
+.section-1 {
+	width: 70%;
+	height: 86vh;
+	overflow: scroll;
+	overflow-x: hidden;
+	margin-left: 1.5vw;
+}
+.section-1::-webkit-scrollbar {
+	display: none;
+}
+
+.section-2 {
+	width: 28%;
+	height: 86vh;
+}
+.outer-carousel{
+	position: relative;
+	left: -5vw;
+	top: -10vh;
+	width: 70%;
+	height: auto;
+	display: flex;
+	flex-direction: row;
+	overflow: visible;
+	justify-content: space-around;
+}
+
+.carousel {
+	position: absolute;
+	left: 15vw;
+	margin-top: 5%;
+	transition: all ease-in-out 1s;
+}
+
+.container {
+  position: absolute;
+  height: 300px;
+  width: 600px;
+  top: 20vh;
+  left: calc(50% - 300px);
+  display: flex;
+  left: -10vw;
+}
+
+.card {
+  display: flex;
+  height: 280px;
+  width: 200px;
+  background-color: #17141d;
+  border-radius: 10px;
+  box-shadow: -1rem 0 3rem #000;
+/*  margin-left: -50px; */
+  transition: 0.4s ease-out;
+  position: relative;
+  left: 0px;
+}
+
+.card:not(:first-child) {
+    margin-left: -50px;
+}
+
+.card:hover {
+  transform: translateY(-35px);
+  transition: 0.4s ease-out;
+}
+
+.card:hover ~ .card {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}
+
+.title {
+  color: white;
+  font-weight: 300;
+  position: absolute;
+  left: 20px;
+  top: 15px;
+}
+
+/* Latest Release Section */
+.latest-release {
+	position: relative;
+	top: 30vw;
+	height: auto;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.latest-release-content {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.latest-release-content > div {
+	height: 100px;
+	width: 47%;
+	margin: 5px 0px;
+}
+
+.latest-release-card {
+	display: flex;
+	flex-direction: row;
+	/*transition: box-shadow ease-in-out 0.1s;*/
+	background-color: #0d1a26;
+	border-radius: 10px;
+	/*height: 100px;*/
+}
+.latest-release-card:hover {
+	box-shadow: 0px 0px 2px 1px #0d1a26;
+	background-color: #38495d;
+}
+.latest-release-card img {
+	z-index: 1;
+	height: 100px;
+	width: 100px;
+	border-radius: 10px 0px 0px 10px;
+}
+
+.play-button {
+	width: 100px;
+	height: 90px;
+	position: relative;
+	top: -105%;
+	color: rgba(255, 255, 255, 0);
+	background-color: rgba(0, 0, 0, 0);
+	font-size: 0px;
+	padding-top: 15%;
+	text-align: center;
+	z-index: 5;
+	transition: all ease-in-out 0.1s;
+	border-radius: 10px 0px 0px 10px;
+}
+/* actual play icon from font awesome */
+.play-button i {
+	padding-top: 45%;
+}
+/* hovering effect for the play button */
+.play-button:hover {
+	color: rgba(255, 255, 255, 0.9);
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.song-description {
+	margin: auto 10%;
+}
+
+.options {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap-reverse;
+	text-align: right;
+	margin-left: auto;
+	margin-right: 2%;
+	margin-top: 2%;
+}
+/* this is for the latest release drop down menu */
+.latest-release-dropdown {
+	position: absolute;
+	background-color: #600c24;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	opacity: 0;
+	width: 0px;
+	height: 0px;
+	top: 20px;
+	right: 0px;
+	overflow: hidden;
+	z-index: 2;
+	border: 1px solid black;
+	box-shadow: 0px 0px 2px 1px black;
+	transition: all ease-in-out 0.3s;
+}
+/* icon in the latest release drop down */
+.fa-ellipsis-h {
+	cursor: pointer;
+}
+/* this input is for the latest release drop down */
+input[type="checkbox"] {
+	display: none;
+}
+/* checking it, will trigger the latest release dropdown */
+input[type="checkbox"]:checked ~ .latest-release-dropdown {
+	width: max-content;
+	height: auto;
+	opacity: 1;
+	padding: 5px;
+}
+
+.drop-item p{
+	text-align: center;
+}
+
+/* Popular Artists Section */
+.popular-artists {
+	position: relative;
+	width: 100%;
+	height: auto;
+	top: 32vw;
+	box-sizing: border-box;
+}
+
+.popular-artists-content {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.popular-artists div a img {
+	width: 10vw;
+	min-width: 60px;
+	min-height: 60px;
+	height: 10vw;
+	border-radius: 50%;
+}
+
+.popular-artists > div {
+	margin: 5px;
+	text-align: center;
+}
+
+.popular-artists-content > a > div {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.popular-artists-content > a > div > div {
+	position: absolute;
+	display: flex;
+	top: 0px;
+	width: 10vw;
+	min-width: 60px;
+	min-height: 60px;
+	height: 10vw;
+	border-radius: 50%;
+	background-color: rgb(0, 0, 0);
+	opacity: 0;
+	transition: opacity ease-in-out 0.2s;
+}
+
+/*.popular-artists-content a div div i {
+	margin: auto;
+	font-size: 3vw;
+	opacity: 0;
+	transition: opacity ease-in-out 0.2s;
+}*/
+
+.popular-artists-content a div img:hover {
+	/*opacity: 0.8;*/
+	box-shadow: 0px 0px 10px 1px black;
+}
+/*.popular-artist-content a div div:hover i {
+	opacity: 1;
+	color: whitesmoke;
+}*/
+
+.popular-artists div p {
+	text-align: center;
+}
+
+/* Music Genre */
+.music-genre {
+	position: relative;
+	top: 35vw;
+	height: auto;
+	width: 100%;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.outer-div {
+	width: 19.5vw;
+	height: 15vw;
+	overflow: hidden;
+	min-width: 123px;
+	min-height: 82px;
+	margin: 10px;
+	cursor: pointer;
+	border-radius: 8px;
+}
+.inner-div {
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	background-position: center;
+	background-size: cover;
+	transition: all ease-in-out 0.2s;
+}
+/* Adding images to the music genre divs */
+.music-genre .outer-div:nth-child(1) .inner-div {
+	background-image: url(media/genres/road.jpg);
+}
+.music-genre .outer-div:nth-child(2) .inner-div {
+	background-image: url(media/genres/party.jpg);
+}
+.music-genre .outer-div:nth-child(3) .inner-div {
+	background-image: url(media/genres/workout.jpg);
+}
+.music-genre .outer-div:nth-child(4) .inner-div {
+	background-image: url(media/genres/love.jpg);
+}
+.music-genre .outer-div:nth-child(5) .inner-div {
+	background-image: url(media/genres/rock.jpg);
+}
+.music-genre .outer-div:nth-child(6) .inner-div {
+	background-image: url(media/genres/pop.jpg);
+}
+
+.outer-div:hover .inner-div {
+	transform: scale(1.5);
+}
+.outer-div .inner-div span {
+	transform: scale(1);
+	transition: all ease-in-out 0.3s;
+}
+.outer-div:hover .inner-div span {
+	transform: scale(0.75);
+	font-size: 3.5;
+}
+
+.inner-div::before {
+	content: "";
+	display: none;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: 0.3s;
+}
+/* adjusting inner div properties */
+.inner-div {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.outer-div .inner-div span {
+	/* color: white; */
+	color: whitesmoke;
+	font-size: 2.5vw;
+	font-family: cursive;
+}
+
+/* Language wise divided eng and hindi section */
+
+.language {
+	position: relative;
+	top: 33vw;
+	height: auto;
+	width: 100%;
+	box-sizing: border-box;
+	margin: 3vw 0px;
+}
+
+.lang-content {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: baseline;
+	flex-wrap: wrap;
+	padding: 0px 2px;
+}
+
+.lang-content div img {
+	width: 100px;
+    min-width: 60px;
+    height: 100px;
+    min-height: 60px;
+    transition: box-shadow ease-in-out 0.1s;
+}
+
+.lang-content div img:hover {
+	box-shadow: 0px 0px 10px 1px black;
+}
+
+.lang-content div {
+	margin: 2vw 0px;
+	width: 9vw;
+	min-width: 60px;
+}
+.lang-content div p:nth-child(2n) {
+	width: 100%;
+	word-wrap: break-word;
+}
+.lang-content div p:nth-child(2n + 1) {
+	font-size: 12px;
+	font-weight: lighter;
+}
+
+/* Section 1 of the Aside section in now complete */
+/*label {
+	position: absolute;
+	top: 25%;
+	right: 0%;
+	display: none;
+	z-index: 3;
+	box-shadow: 0px 0px 2px 1px black;
+	width: 80px;
+	font-size: 20px;
+	height: 24px;
+	text-align: center;
+	background-image: linear-gradient(-20deg,#161616 20%,#8e021f 80%);
+	padding-bottom: 5px;
+	padding-top: 5px;
+	font-family: optima;
+}
+/*///////////////////////////////////////////////////////////////////////////*/   
+
+label[for="more"] {
+	display: none;
+	position: absolute;
+	right: 0%;
+	top: 20%;
+	padding-bottom: 5px;
+	z-index: 4;
+	width: 70px;
+	font-size: 20px;
+	height: 25px;
+	text-align: center;
+	box-shadow: 0px 0px 2px 1px black;
+	/*background-image: linear-gradient(45deg, red -50%, blue 150%);*/ 
+	background-image: linear-gradient(-20deg,#161616 20%,#8e021f 80%); 
+}  
+/* when  the checkbox corresponding to the "more" button is checked, then the section becomes visible */
+/* but at a normal resolution, its display will be none */
+label[for="more"]:checked ~ input {
+	display: none;
+}
+
+/************************************************************************************************************************/
+/* Section 2 starts from here */
+
+/* ASIDE SECTION 2 */
+.section-heading {
+	margin-top: 12px;
+	margin-bottom: 12px;
+	position: relative;
+}
+.section-heading div,
+.section-heading h1 {
+	display: inline-block;
+}
+.section-heading h1 {
+	font-size: 25px;
+}
+.section-heading div {
+	position: absolute;
+	right: 0%;
+	bottom: 0%;
+	font-size: 15px;
+	color: rgb(185, 185, 185);
+}
+/* List */
+.list {
+	height: 75vh;
+	overflow: scroll;
+}
+.list::-webkit-scrollbar {
+	display: none;
+}
+.list-item {
+	display: flex;
+	flex-direction: row;
+	flex-direction: space-between;
+	align-items: center;
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100px;
+    margin-bottom: 12px;
+    background-color: #0d1a26;
+    border-radius: 10px;
+}
+.list-item:hover {
+	background-color: #38495d;
+}
+
+.list-item>div:nth-child(1) {
+	width: 100px;
+	height: 100%;
+	position: relative;
+}
+.list-item>div:nth-child(1) img {
+	width: 100%;
+	height: 100%;
+	border-radius: 10px 0px 0px 10px;
+}
+/* Animation for heart icon */
+.list-item:hover .fa-heart {
+	animation: 1.5s ease 0s infinite beat;
+}
+@keyframes beat {
+  0%, 50%, 100% { transform: scale(1.5, 1.5); }
+  30%, 80% { transform: scale(0.92, 0.95); }
+}
+
+.play {
+	/*background-color: black;*/
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	opacity: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	transition: all ease-in-out 0.01s;
+}
+.play:hover {
+	opacity: 1;
+}
+
+.song-detail {
+	font-size: 14px;
+	color: rgb(185, 185, 185);
+}
+.time {
+	text-align: right;
+	height: 30%;
+	position: relative;
+	right: -16vw;
+}
+
+/**********************************************************************************************************************************/
+/* Footer Section starts here. */
+
+footer {
+	position: absolute;
+	bottom: 1px;
+	width: 100%;
+	height: 60px;
+	/*background-color: #050d11;*/
+	background-image: linear-gradient(180deg, #0d1a26, rgba(0, 0, 0, 1));
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-content: center;
+	flex-wrap: nowrap;
+	padding: 0px 3%;
+	box-sizing: border-box;
+	z-index: 6;
+}
+
+.playing-song {
+	height: 90%;
+	width: 25%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.song-pic {
+	height: 50px;
+	width: 50px;
+	min-width: 50px;
+	min-height: 50px;
+}
+.song-pic img {
+	width: 100%;
+	height: 100%;
+}
+
+.about-song {
+	margin-left: 1%;
+	margin-right: 1%;
+}
+.about-song div:nth-child(1) {
+	font-size: 14px;
+}
+.about-song div:nth-child(2) {
+	font-size: 12px;
+}
+
+
+.mini-player {
+	width: 45%;
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.controls {
+	display: flex;
+	flex-direction: row;
+	width: 40%;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 20px;
+}
+
+#slider {
+	width: 100%;
+	font-size: 12px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	margin-top: 5px;
+}
+.song-time {
+	margin: 0px 10px;
+}
+.slider-bar {
+	width: 100%;
+}
+
+.slider {
+	-webkit-appearance: none;
+	width: 100%;
+	height: 5px;
+	background: white;
+	outline: none;
+	opacity: 0.5;
+	-webkit-transition: 0.2s;
+	transition: opacity 0.2s;
+}
+.slider: hover {
+	opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 17px;
+	height: 17px;
+	border-radius: 50%;
+	background: #007bff;
+	cursor: pointer;
+}
+.slider::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	background: #4caf50;
+	cursor: pointer;
+}
+
+.extras {
+	width: 20%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+           /* This Stylesheet ends here */
+
+
+
+
+
+
+
+
